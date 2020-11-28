@@ -62,7 +62,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ) ),
-              Expanded(child:Cards()),
+              Expanded(child:Cards(
+                card: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      FontAwesomeIcons.venus,
+                      size:70.0,
+                      color: Colors.white,
+
+                    ),
+                    SizedBox(
+                      height:15.0,
+                    ),
+                    Text('FEMALE', style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.grey
+
+                    ))
+                  ],
+                ),
+              )),
             ],
           )),
           Expanded(child: Cards()),
@@ -89,6 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   }
 }
+
+
+
 
 class Cards extends StatelessWidget {
   Cards({@required this.card});
