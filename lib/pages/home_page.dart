@@ -36,6 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Color male = Color(0xFF1D1E33);
   Color female = Color(0xFF1D1E33);
 
+  int height = 180;
+
 void colorUp(int s){
   if (s==1){
     if(male == Color(0xFF111328)){
@@ -149,9 +151,9 @@ void colorUp(int s){
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
                 children: [
-                  Text('180',
+                  Text(height.toString(),
                   style:TextStyle(
-                    fontSize:50.0,
+                    fontSize:35.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
                   )),
@@ -161,13 +163,41 @@ void colorUp(int s){
 
                   )),
                 ],
-              )
+              ),
+              SliderTheme(data:SliderTheme.of(context).copyWith(
+                  activeTrackColor: Colors.white,
+                thumbColor: Colors.pink,
+                overlayColor: Colors.pinkAccent,
+                thumbShape: RoundSliderThumbShape(enabledThumbRadius: 14.0),
+                overlayShape: RoundSliderOverlayShape(overlayRadius: 18.0)
+              ),child:Slider(
+                value : height.toDouble(),
+                min: 100.0,
+                max: 300.0,
+
+                inactiveColor: Colors.grey,
+                onChanged: (double newnew){
+
+
+                  setState(() {
+                    height = newnew.round();
+                  });
+
+                }
+
+
+
+
+              )),
             ],
 
           ))),
           Expanded(child:Row(
             children: [
-              Expanded(child:Cards(c:allitems,)),
+              Expanded(child:Cards(c:allitems,
+              card:Column(
+               
+              ))),
               Expanded(child: Cards(c:allitems,)),
             ],
           )),
