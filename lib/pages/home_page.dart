@@ -16,6 +16,18 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+//hethya nahitha 5ater hacti beha class
+//cards(){
+//  return Container(
+//      margin: EdgeInsets.all(15.0),
+//      decoration:BoxDecoration(
+//          color:Color(0xFF1D1E33),
+//          borderRadius: BorderRadius.circular(10.0)
+//      )
+//  );
+//
+//}
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -28,45 +40,15 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Expanded(child:Row(
             children: [
-              Expanded(child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  decoration:BoxDecoration(
-                      color:Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0)
-                  )
-              ),),
-              Expanded(child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  decoration:BoxDecoration(
-                      color:Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0)
-                  )
-              ),),
+              Expanded(child: Cards() ),
+              Expanded(child:Cards()),
             ],
           )),
-          Expanded(child: Container(
-              margin: EdgeInsets.all(15.0),
-              decoration:BoxDecoration(
-                  color:Color(0xFF1D1E33),
-                  borderRadius: BorderRadius.circular(10.0)
-              )
-          ),),
+          Expanded(child: Cards()),
           Expanded(child:Row(
             children: [
-              Expanded(child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  decoration:BoxDecoration(
-                      color:Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0)
-                  )
-              ),),
-              Expanded(child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  decoration:BoxDecoration(
-                      color:Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0)
-                  )
-              ),),
+              Expanded(child:Cards()),
+              Expanded(child: Cards()),
             ],
           )),
 
@@ -80,3 +62,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class Cards extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+            color: Color(0xFF1D1E33),
+            borderRadius: BorderRadius.circular(10.0)
+        )
+    );
+  }
+}
