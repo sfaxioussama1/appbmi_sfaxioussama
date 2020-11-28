@@ -66,6 +66,8 @@ void colorUp(int s){
         backgroundColor: Color(0xFF0A0D22),
       ),
       body: Column (
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+
         children: [
           Expanded(child:Row(
             children: [
@@ -133,7 +135,36 @@ void colorUp(int s){
               ))),
             ],
           )),
-          Expanded(child: Cards(c:allitems,)),
+          Expanded(child: Cards(c:allitems,
+          card:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('HEIGHT', style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.grey
+
+              )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center ,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text('180',
+                  style:TextStyle(
+                    fontSize:50.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                  )),
+                  Text('cm', style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.grey
+
+                  )),
+                ],
+              )
+            ],
+
+          ))),
           Expanded(child:Row(
             children: [
               Expanded(child:Cards(c:allitems,)),
