@@ -1,3 +1,4 @@
+import 'final_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -216,6 +217,7 @@ void colorUp(int s){
                     mainAxisAlignment: MainAxisAlignment.center,
                       children:[
                   FloatingActionButton(
+                    heroTag: "btn1",
                     onPressed: (){
                       setState(() {
                         weight--;
@@ -226,6 +228,7 @@ void colorUp(int s){
                   ),
                   SizedBox(width:8.0,),
                   FloatingActionButton(
+                    heroTag: "btn2",
                     onPressed: (){
                       setState(() {
                         weight++;
@@ -258,6 +261,7 @@ void colorUp(int s){
                         mainAxisAlignment: MainAxisAlignment.center,
                         children:[
                           FloatingActionButton(
+                            heroTag: "btn3",
                             onPressed: (){
                               setState(() {
                                 age--;
@@ -268,6 +272,7 @@ void colorUp(int s){
                           ),
                           SizedBox(width:8.0,),
                           FloatingActionButton(
+                            heroTag: "btn4",
                             onPressed: (){
                               setState(() {
                                 age++;
@@ -283,11 +288,19 @@ void colorUp(int s){
             ],
           )),
 
-          Container(
+          GestureDetector(
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FinalPage()));
+              },
+            child: Container(
+              child:Center(
+              child: Text('CALCULATE', style:TextStyle(fontSize: 25.0,fontWeight: FontWeight.bold,color:Colors.white))),
             color: Colors.pink,
             margin: EdgeInsets.only(top:10.0),
+            padding: EdgeInsets.only(bottom:20.0),
             width: double.infinity,
             height: 80.0,
+            )
           ),
 
 
