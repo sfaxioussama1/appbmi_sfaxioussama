@@ -1,3 +1,5 @@
+import 'package:appbmisfaxioussama/controler/calcul.dart';
+
 import 'final_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -290,7 +292,16 @@ void colorUp(int s){
 
           GestureDetector(
               onTap:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => FinalPage()));
+                Calcul ca = Calcul(height: height,weight: weight);
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FinalPage(
+                  finalBmiResult:ca.BmiCalc(),
+                  txtResult:ca.getFinalResult(),
+                  fed:ca.getIt(),
+
+
+                )));
+
               },
             child: Container(
               child:Center(

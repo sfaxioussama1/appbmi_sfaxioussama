@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 class FinalPage extends StatelessWidget {
+  FinalPage({@required this.finalBmiResult,@required this.txtResult,@required this.fed});
+  final String finalBmiResult ;
+  final String txtResult;
+  final String fed;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +44,7 @@ class FinalPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
                children: [
                           Text(
-                           'Normal',
+                            txtResult.toUpperCase(),
                             style: TextStyle(
                             color: Color(0xFF24D876),
                             fontSize: 20.0,
@@ -47,9 +52,9 @@ class FinalPage extends StatelessWidget {
                                ),
                               ),
                  Text(
-                   '18.0', style:TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold,color: Colors.white)
+                     finalBmiResult, style:TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold,color: Colors.white)
                  ),
-                 Text('Your BMI result is quitte low,you should eat more :)',textAlign:TextAlign.center,style:TextStyle( color:Colors.white,fontSize: 22.0)),
+                 Text(fed,textAlign:TextAlign.center,style:TextStyle( color:Colors.white,fontSize: 22.0)),
 
 
                ],
