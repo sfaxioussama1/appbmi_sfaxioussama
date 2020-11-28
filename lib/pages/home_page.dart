@@ -37,6 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Color female = Color(0xFF1D1E33);
 
   int height = 180;
+  int weight = 60;
+  int age = 50;
 
 void colorUp(int s){
   if (s==1){
@@ -196,9 +198,88 @@ void colorUp(int s){
             children: [
               Expanded(child:Cards(c:allitems,
               card:Column(
-               
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('WEIGHT', style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.grey
+
+                  )),
+                  Text(
+                    weight.toString(),
+                     style:TextStyle(
+                                    fontSize:35.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w900,
+                             )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                      children:[
+                  FloatingActionButton(
+                    onPressed: (){
+                      setState(() {
+                        weight--;
+                      });
+                    },
+                    backgroundColor:Colors.pink ,
+                    child:Icon(FontAwesomeIcons.minus,color:Colors.white),
+                  ),
+                  SizedBox(width:8.0,),
+                  FloatingActionButton(
+                    onPressed: (){
+                      setState(() {
+                        weight++;
+                      });
+                    },
+                    backgroundColor:Colors.pink ,
+                    child:Icon(FontAwesomeIcons.plus,color:Colors.white),
+                  ),
+
+                            ] ,), ],
+
               ))),
-              Expanded(child: Cards(c:allitems,)),
+              Expanded(child:Cards(c:allitems,
+                  card:Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('AGE', style: TextStyle(
+                          fontSize: 18.0,
+                          color: Colors.grey
+
+                      )),
+                      Text(
+                          age.toString(),
+                          style:TextStyle(
+                            fontSize:35.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                          )),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children:[
+                          FloatingActionButton(
+                            onPressed: (){
+                              setState(() {
+                                age--;
+                              });
+                            },
+                            backgroundColor:Colors.pink ,
+                            child:Icon(FontAwesomeIcons.minus,color:Colors.white),
+                          ),
+                          SizedBox(width:8.0,),
+                          FloatingActionButton(
+                            onPressed: (){
+                              setState(() {
+                                age++;
+                              });
+                            },
+                            backgroundColor:Colors.pink ,
+                            child:Icon(FontAwesomeIcons.plus,color:Colors.white),
+                          ),
+
+                        ] ,), ],
+
+                  )))
             ],
           )),
 
@@ -238,3 +319,14 @@ class Cards extends StatelessWidget {
     );
   }
 }
+
+//class IcoButtonns extends StatelessWidget {
+//  IcoButtonns({this.child});
+//  final Widget child;
+//  @override
+//  Widget build(BuildContext context){
+//    return RawMaterialButton(
+//      child:child,
+//    );
+//  }
+//}
