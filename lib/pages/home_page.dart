@@ -29,7 +29,35 @@ class MyHomePage extends StatefulWidget {
 //
 //}
 
+
+
 class _MyHomePageState extends State<MyHomePage> {
+  Color allitems = Color(0xFF1D1E33);
+  Color male = Color(0xFF1D1E33);
+  Color female = Color(0xFF1D1E33);
+
+void colorUp(int s){
+  if (s==1){
+    if(male == Color(0xFF111328)){
+      male =Color(0xFF1D1E33);
+      female = Color(0xFF111328);
+
+    }
+    else{
+      male=Color(0xFF111328);
+    }
+  }
+   if(s==2){
+    if(female == Color(0xFF111328)){
+      female =Color(0xFF1D1E33);
+      male = Color(0xFF111328);
+    }
+    else{
+      female=Color(0xFF111328);
+
+    }
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +69,17 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Expanded(child:Row(
             children: [
-              Expanded(child: Cards(
+              Expanded(
+                child: GestureDetector(
+                 onTap: () {
+                   setState(() {
+                     colorUp(1);
+
+                   });
+
+                           },
+                  child: Cards(
+                    c:male,
                 card: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -61,8 +99,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ))
                   ],
                 ),
-              ) ),
-              Expanded(child:Cards(
+              ) )),
+              Expanded(
+                child: GestureDetector(
+                     onTap: () {
+                       setState(() {
+                         colorUp(2);
+
+                           });
+
+                             },
+                  child:Cards(
+                c:female,
                 card: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -82,14 +130,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ))
                   ],
                 ),
-              )),
+              ))),
             ],
           )),
-          Expanded(child: Cards()),
+          Expanded(child: Cards(c:allitems,)),
           Expanded(child:Row(
             children: [
-              Expanded(child:Cards()),
-              Expanded(child: Cards()),
+              Expanded(child:Cards(c:allitems,)),
+              Expanded(child: Cards(c:allitems,)),
             ],
           )),
 
@@ -114,7 +162,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 class Cards extends StatelessWidget {
-  Cards({@required this.card});
+  Cards({@required this.c,this.card});
+  final Color c;
     final Widget card;
   @override
   Widget build(BuildContext context) {
@@ -122,7 +171,7 @@ class Cards extends StatelessWidget {
       child:card,
         margin: EdgeInsets.all(15.0),
         decoration: BoxDecoration(
-            color: Color(0xFF1D1E33),
+            color: c,
             borderRadius: BorderRadius.circular(10.0)
         )
     );
