@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('MALE', style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.grey
+                     
 
                     ))
                   ],
