@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+
 class MyHomePage extends StatefulWidget {
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -10,7 +10,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
 
 
   @override
@@ -25,18 +24,59 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('BMI CALCULATOR'),
         backgroundColor: Color(0xFF0A0D22),
       ),
-      body: Center(
+      body: Column (
+        children: [
+          Expanded(child:Row(
+            children: [
+              Expanded(child: Container(
+                  margin: EdgeInsets.all(15.0),
+                  decoration:BoxDecoration(
+                      color:Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(10.0)
+                  )
+              ),),
+              Expanded(child: Container(
+                  margin: EdgeInsets.all(15.0),
+                  decoration:BoxDecoration(
+                      color:Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(10.0)
+                  )
+              ),),
+            ],
+          )),
+          Expanded(child: Container(
+              margin: EdgeInsets.all(15.0),
+              decoration:BoxDecoration(
+                  color:Color(0xFF1D1E33),
+                  borderRadius: BorderRadius.circular(10.0)
+              )
+          ),),
+          Expanded(child:Row(
+            children: [
+              Expanded(child: Container(
+                  margin: EdgeInsets.all(15.0),
+                  decoration:BoxDecoration(
+                      color:Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(10.0)
+                  )
+              ),),
+              Expanded(child: Container(
+                  margin: EdgeInsets.all(15.0),
+                  decoration:BoxDecoration(
+                      color:Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(10.0)
+                  )
+              ),),
+            ],
+          )),
 
-        child:
-        Text('Body Text',  style: TextStyle(color: Colors.white),
-        ),
 
 
-
-
-      ),
-      backgroundColor: Color(0xFF0A0D22),
-
+      ],
+    ),
+        backgroundColor: Color(0xFF0A0D22),
     );
+
   }
 }
+
